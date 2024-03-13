@@ -1,0 +1,226 @@
+@charset 'utf-8';
+@import url(./my_reset.css);
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+:root {
+  max-width: 1440px;
+  width: calc(100% - 4rem);
+  margin: auto;
+  --font-size-large: 1.312rem;
+  --font-size-medium: 0.857em;
+  --font-size-small: 0.875rem;
+}
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 1;
+}
+.wrap {
+  /* overflow: hidden; */
+}
+
+/*header*/
+.hd {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+}
+
+.logo {
+  padding: 1rem;
+  width: 135px;
+  margin-left: 50px;
+}
+.hd nav {
+  position: relative;
+}
+.hd nav::before {
+  background-color: #f0f4ff;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -500%;
+  width: 1000%;
+  height: 0px;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: -1;
+}
+
+.hd nav:hover::before {
+  height: 120px;
+  opacity: 1;
+}
+
+.hd .gnb {
+  display: flex;
+}
+.hd .gnb > li {
+  position: relative;
+  padding: 2rem;
+}
+.hd .gnb > li > a {
+  font-family: "GmarketSansMedium";
+  display: block;
+  color: #144aaa;
+  font-weight: bold;
+}
+
+.hd .gnb > li > a {
+  font-size: var(--font-size-large);
+  font-weight: bold;
+}
+.hd .gnb > a {
+  display: block;
+  white-space: nowrap;
+}
+.gnb .sub {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  height: 0;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.gnb:hover .sub {
+  opacity: 1;
+  height: 120px;
+  top: 100%;
+  left: 0;
+}
+.gnb .sub li {
+  position: relative;
+  padding: 1rem;
+  font-size: var(--font-size-medium);
+  color: #777777;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gnb .sub li:hover a::after {
+  content: "\25CF";
+  font-size: 0.4rem;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+  transition: 0.3s;
+}
+
+.gnb .sub li:hover a {
+  color: #144aaa;
+}
+
+.gnb .sub > li > a {
+  position: absolute;
+  display: block;
+}
+.gnb > li > a:hover {
+  color: #000000;
+}
+.hd .func {
+  display: flex;
+}
+
+.hd .func a {
+  position: relative;
+  padding: 0.5rem;
+  font-size: var(--font-size-small);
+  color: #144aaa;
+}
+
+.hd func i {
+  padding: 5px;
+}
+
+.func a:hover {
+  text-decoration: underline;
+}
+
+/*main*/
+.mainVisual {
+  position: relative;
+}
+
+.text {
+  font-family: "GmarketSansMedium";
+  color: #144aaa;
+  position: absolute;
+  top: 8rem;
+  left: 5rem;
+}
+.text p {
+  font-size: 1.875rem;
+  margin-bottom: 1rem;
+}
+.text h2 {
+  font-size: 3.6875rem;
+}
+
+.quick .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pg span {
+  font-size: 1rem;
+  color: #777777;
+  padding: 1rem;
+}
+
+.pg span:hover {
+  color: #144aaa;
+  font-weight: bold;
+}
+
+.wrap2 {
+  position: absolute;
+  display: flex;
+  background-color: #f0f4ff;
+  border: 1px solid #f0f4ff;
+  left: 20%;
+}
+
+.quick {
+  font-family: "GmarketSansMedium";
+  font-size: 1.5625rem;
+  display: block;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  padding: 2rem;
+  top: 0;
+  left: 0;
+}
+.quick a {
+  padding: 1rem;
+  color: #144aaa;
+  font-weight: bold;
+}
+.ham {
+  display: none;
+}
